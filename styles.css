@@ -1,5 +1,10 @@
 #stacked-bar-chart {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   box-sizing: border-box;
+}
+
+#description {
+  display: inline-flex;
+  border: 1px solid black;
 }
