@@ -1,10 +1,10 @@
 #stacked-bar-chart {
   display: inline-flex;
-  flex-direction: column;
   box-sizing: border-box;
-}
+  border-bottom: 1px solid black;
+} 
 
-#description {
+/* #description {
   display: inline-flex;
   border: 1px solid black;
-}
+} */

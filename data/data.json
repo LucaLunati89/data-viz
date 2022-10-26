@@ -1,16 +1,20 @@
 {
-  "data":[
-    {
-      "value": 100, 
-      "color": "#769976"
-    },
-    {
-      "value": 150,
-      "color": "#A5E6A6"
-    },
-    {
-      "value": 150,
-      "color": "#E6E49A"
-    }
-  ]
+  "group" : {
+    "name": "Group_1",
+    "totalValue": 600,
+    "categories": [
+      {
+        "name": "Category_1",
+        "value": 100
+      },
+      {
+        "name": "Category_1",
+        "value": 200
+      },
+      {
+        "name": "Category_1",
+        "value": 300
+      }
+    ]
+  }
 }
