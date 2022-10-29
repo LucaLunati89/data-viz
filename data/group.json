@@ -5,15 +5,18 @@
     "categories": [
       {
         "name": "Category_1",
-        "value": 100
+        "value": 100,
+        "color": "#A5E6A6"
       },
       {
         "name": "Category_1",
-        "value": 200
+        "value": 200,
+        "color": "#E6E49A"
       },
       {
         "name": "Category_1",
-        "value": 300
+        "value": 300,
+        "color": "#769976"
       }
     ]
   }
