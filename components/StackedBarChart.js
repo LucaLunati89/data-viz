@@ -50,9 +50,12 @@ export default class StackedBarChart{
           e.target.style.outlineOffset= '-1px';
           const descr = document.getElementById('descr-stacked');
           descr.style.display = 'none';
+          const percentage = (d.value * 100) / this.data.totalValue - Math.floor((d.value * 100) / this.data.totalValue);
+          const percFloor = parseFloat(percentage.toPrecision(1));
+          const numb = Math.floor((d.value * 100) / this.data.totalValue) + percFloor;
           const p = document.createElement('p');
           p.setAttribute('id', 'value')
-          p.innerHTML= `${d.name}<br/>${d.value}`;
+          p.innerHTML= `${d.name}<br/>${d.value}<br/>${numb}%`;
           const des = document.getElementById('description');
           des.insertBefore(p, des.firstChild)
         });
