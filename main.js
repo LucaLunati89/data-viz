@@ -3,7 +3,6 @@ import StackedBarChart from "./components/StackedBarChart.js";
 async function getGroup() {
   const response = await fetch('./data/group.json');
   const json = await response.json();
-  console.log(json);
   const div = document.getElementById('stacked-bar-chart');
   const {name, totalValue, categories} = json.group;
   
@@ -29,21 +28,18 @@ async function getMessage() {
 }
 
 //description
-const width = document.getElementById('description').clientWidth;
-console.log(document.getElementById('description'));
 const svg = document.getElementById('decoration');
-console.log(svg);
 const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
 rect.setAttribute('width', '100%');
-console.log(width);
 rect.setAttribute('height', svg.clientHeight);
 rect.setAttribute('x', 0);
 rect.setAttribute('y', 0);
 svg.appendChild(rect);
 
-
-getGroup();
 getMessage();
+getGroup();
+
+
 
 
 

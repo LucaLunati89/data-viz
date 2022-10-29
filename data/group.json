@@ -6,17 +6,17 @@
       {
         "name": "Category_1",
         "value": 100,
-        "color": "#A5E6A6"
+        "color": "hsl(120, 15%, 53%)"
       },
       {
-        "name": "Category_1",
+        "name": "Category_2",
         "value": 200,
-        "color": "#E6E49A"
+        "color": "hsl(180, 15%, 53%)"
       },
       {
-        "name": "Category_1",
+        "name": "Category_3",
         "value": 300,
-        "color": "#769976"
+        "color": "hsl(200, 15%, 53%)"
       }
     ]
   }
