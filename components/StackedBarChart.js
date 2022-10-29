@@ -29,6 +29,7 @@ export default class StackedBarChart{
       svg.setAttribute('width', this.width);
       svg.setAttribute('height', isNotMappedValues ? this.data.totalValue : this.mappedValues.get(this.data.totalValue));
       svg.style.margin = margin;
+      svg.style.marginBottom = 0;
     
     let y = 0;
     this.data.categories.forEach((d) => {
