@@ -1,0 +1,52 @@
+{
+  "debit": [
+    {
+      "amount": 100,
+      "month": "JANAUARY"
+    },
+    {
+      "amount": 100,
+      "month": "FEBRUARY"
+    },
+    {
+      "amount": 100,
+      "month": "MARCH"
+    },
+    {
+      "amount": 100,
+      "month": "APRIL"
+    },
+    {
+      "amount": 100,
+      "month": "MAY"
+    },
+    {
+      "amount": 100,
+      "month": "JUNE"
+    },
+    {
+      "amount": 100,
+      "month": "JULY"
+    },
+    {
+      "amount": 100,
+      "month": "AUGUST"
+    },
+    {
+      "amount": 100,
+      "month": "SEPTEMBER"
+    },
+    {
+      "amount": 100,
+      "month": "OCTOBER"
+    },
+    {
+      "amount": 100,
+      "month": "NOVEMBER"
+    },
+    {
+      "amount": 100,
+      "month": "DECEMBER"
+    }
+  ]
+}
