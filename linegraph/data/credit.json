@@ -1,23 +1,23 @@
 {
   "credit": [
     {
-      "amount": 100,
+      "amount": 150,
       "month": "JANAUARY"
     },
     {
-      "amount": 100,
+      "amount": 300,
       "month": "FEBRUARY"
     },
     {
-      "amount": 100,
+      "amount": 400,
       "month": "MARCH"
     },
     {
-      "amount": 100,
+      "amount": 320,
       "month": "APRIL"
     },
     {
-      "amount": 100,
+      "amount": 118,
       "month": "MAY"
     },
     {
@@ -29,23 +29,23 @@
       "month": "JULY"
     },
     {
-      "amount": 100,
+      "amount": 70,
       "month": "AUGUST"
     },
     {
-      "amount": 100,
+      "amount": 55,
       "month": "SEPTEMBER"
     },
     {
-      "amount": 100,
+      "amount": 150,
       "month": "OCTOBER"
     },
     {
-      "amount": 100,
+      "amount": 190,
       "month": "NOVEMBER"
     },
     {
-      "amount": 100,
+      "amount": 224,
       "month": "DECEMBER"
     }
   ]
