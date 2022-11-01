@@ -2,3 +2,8 @@
   box-sizing: border-box;
   margin:0;
 }
+
+section {
+  background-color: #002439;
+  padding: 15px;
+}

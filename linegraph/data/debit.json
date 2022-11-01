@@ -1,10 +1,6 @@
 {
   "debit": [
     {
-      "amount": 106,
-      "month": "DECEMBER"
-    },
-    {
       "amount": 100,
       "month": "JANAUARY"
     },
@@ -25,7 +21,7 @@
       "month": "MAY"
     },
     {
-      "amount": 530,
+      "amount": 570,
       "month": "JUNE"
     },
     {
