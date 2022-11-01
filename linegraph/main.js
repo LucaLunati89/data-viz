@@ -22,7 +22,7 @@ const gMonth = document.createElementNS(svgns, 'g');
 const kY = width / 12 ;
 let x = 0;
 
-for (let i = 0; i < 12; i++) {
+for (let i = 0; i < 12 ; i++) {
   let line = document.createElementNS(svgns, 'line');
     line.setAttribute('id', months[i]);
     line.setAttribute('x1', x);
@@ -52,19 +52,17 @@ for (let i = 0; i < yAxis - 1; i++) {
   y += kX;
 }
 
-//function to find Max  of debit and credit
-const getMax = ({credit}) => {
-  let creditAmount = [];
-  credit.forEach(el => {
-    creditAmount.push(el.amount);
-  });
+/********************GET DEBIT AND CREDIT DATA*********************/
 
-    return {maxCredit: Math.max(...creditAmount)};
-}
-
-//get debit line
 async function getDebit() {
   const response = await fetch('./data/debit.json');
+  const json = await response.json();
+  return json;
+}
+
+
+async function getCredit() {
+  const response = await fetch('./data/credit.json');
   const json = await response.json();
   return json;
 }
@@ -72,41 +70,82 @@ async function getDebit() {
 const debit = await getDebit();
 console.log('debit: ', debit);
 
-//get crredit line
-async function getCredit() {
-  const response = await fetch('./data/credit.json');
-  const json = await response.json();
-  return json;
-}
-
 const credit = await getCredit();
 console.log('credit: ', credit);
 
-//get max values
-const maxValues = getMax(credit);
-console.log('Max values: ', maxValues);
+/********************GET MAX VALUE*********************/
 
-//map credit amounts
-const kMap = height / maxValues.maxCredit;
-const map = credit.credit.map(period => [period.amount, period.amount * kMap]);
-console.log(map);
+const getMaxCredit = ({credit}) => {
+  let creditAmount = [];
+  credit.forEach(el => {
+    creditAmount.push(el.amount);
+  });
 
-const polyline = document.createElementNS(svgns, 'polyline');
+    return Math.max(...creditAmount);
+}
+
+const getMaxDebit = ({debit}) => {
+  let debitAmount = [];
+  debit.forEach(el => {
+    debitAmount.push(el.amount);
+  });
+
+    return Math.max(...debitAmount);
+}
+
+const maxCredit = getMaxCredit(credit);
+console.log('Max credit: ', maxCredit);
+
+const maxDebit = getMaxDebit(debit);
+console.log('Max debit: ', maxDebit);
+
+
+const max = Math.max(...[maxCredit, maxDebit]);
+console.log('max: ',max);
+
+/********************MAP AND DRAW CREDIT*********************/
+
+const kCreditMap = height / max;
+const mapCredit = credit.credit.map(period => [period.amount, period.amount * kCreditMap]);
+console.log(mapCredit);
+
+const creditPl = document.createElementNS(svgns, 'polyline');
 const kYCredit = width / 12 ;
-let xCredit = kYCredit;
-let points = "";
-for(let i = 0; i < 12; i++){
-  points += `${xCredit}, ${map[i][1]} `;
+let xCredit = 0;
+let pointsCredit = "";
+for(let i = 0; i < 13; i++){
+  pointsCredit += `${xCredit}, ${height - mapCredit[i][1]} `;
   xCredit += kYCredit;
 };
 
-polyline.setAttribute('points', points);
-polyline.setAttribute('fill', 'none');
-polyline.setAttribute('stroke', 'black');
+creditPl.setAttribute('points', pointsCredit);
+creditPl.setAttribute('fill', 'none');
+creditPl.setAttribute('stroke', 'red');
 
+/********************MAP AND DRAW DEBIT*********************/
+
+const kDebitMap = height / max;
+const mapDebit = debit.debit.map(period => [period.amount, period.amount * kDebitMap]);
+console.log(kDebitMap);
+
+const debitPl = document.createElementNS(svgns, 'polyline');
+const kYDebit = width / 12 ;
+let xDebit = 0;
+let pointsDebit = "";
+for(let i = 0; i < 13; i++){
+  pointsDebit += `${xDebit}, ${height - mapDebit[i][1]} `;
+  xDebit += kYDebit;
+};
+
+debitPl.setAttribute('points', pointsDebit);
+debitPl.setAttribute('fill', 'none');
+debitPl.setAttribute('stroke', 'green');
+
+/********************APPEND CHART*********************/
 
 svg.appendChild(gMonth);
 svg.appendChild(gAmount);
-svg.appendChild(polyline);
+svg.appendChild(creditPl);
+svg.appendChild(debitPl);
 div.appendChild(svg);
 section.appendChild(div);

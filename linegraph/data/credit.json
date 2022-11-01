@@ -1,6 +1,10 @@
 {
   "credit": [
     {
+      "amount": 225,
+      "month": "DECEMBER"
+    },
+    {
       "amount": 150,
       "month": "JANAUARY"
     },
@@ -9,7 +13,7 @@
       "month": "FEBRUARY"
     },
     {
-      "amount": 400,
+      "amount": 450,
       "month": "MARCH"
     },
     {
