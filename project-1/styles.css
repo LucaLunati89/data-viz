@@ -1,0 +1,16 @@
+* {
+  margin : 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(#08aeea, #2af598);
+  height: 100vh;
+}
+
+header {
+  color: aliceblue;
+  border-bottom: 1px solid aliceblue;
+}
+
